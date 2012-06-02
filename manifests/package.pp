@@ -1,9 +1,6 @@
-class newrelic::package {
-    include newrelic::repo
+class newrelic::package inherits repo {
 
     package { "newrelic-sysmond":
-        ensure  => latest,
-        notify  => Class["newrelic::server"],
-        require => Class["newrelic::repo"];
+        ensure  => $newrelic::ensure,
     }
 }
