@@ -2,7 +2,7 @@ class newrelic::repo {
     Exec['newrelic-add-apt-key', 'newrelic-add-apt-repo', 'newrelic-apt-get-update'] {
       path +> ['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin']
     }
-    case $operatingsystem {
+    case $::operatingsystem {
         /Debian|Ubuntu/: {
             exec { newrelic-add-apt-key:
                 unless  => "apt-key list | grep -q 1024D/548C16BF",
