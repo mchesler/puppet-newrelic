@@ -1,6 +1,6 @@
 class newrelic::config {
 
-  Class['newrelic'] -> Class['newrelic::config']  
+  Class['newrelic'] -> Class['newrelic::config'] ~> Class['newrelic::service']
 
   if $newrelic::ensure == 'present' {
     $dir_ensure = 'directory'
