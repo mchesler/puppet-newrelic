@@ -12,7 +12,7 @@ class newrelic (
   $license_key
 ) inherits newrelic::params {
 
-    Class['newrelic'] -> Class['newrelic::repo'] -> Class['newrelic::config'] -> Class['newrelic::package'] ~> Class['newrelic::service']
+    Class['newrelic'] -> Class['newrelic::repo'] -> Class['newrelic::package'] -> Class['newrelic::config'] ~> Class['newrelic::service']
 
     include newrelic::repo
     include newrelic::package
