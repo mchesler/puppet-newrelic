@@ -16,7 +16,7 @@
 #          required in order for the server monitor to start.
 # Default: none
 #
-license_key=<%= license_key %>
+license_key=<%= @license_key %>
 
 #
 # Option : loglevel
@@ -31,7 +31,7 @@ license_key=<%= license_key %>
 # Default: error
 # Note   : Can also be set with the -d command line option.
 #
-loglevel=<%= loglevel %>
+loglevel=<%= @loglevel %>
 
 #
 # Option : logfile
@@ -41,7 +41,7 @@ loglevel=<%= loglevel %>
 # Default: none. However it is highly recommended you set a value for this.
 # Note   : Can also be set with the -l command line option.
 #
-logfile=<%= logfile %>
+logfile=<%= @logfile %>
 
 #
 # Option : proxy
@@ -54,7 +54,7 @@ logfile=<%= logfile %>
 #            fred:secret@proxy.mydomain.com:8181
 # Default: none (use a direct connection)
 #
-<% if ! @proxy %>#<% end %>proxy=<%= proxy %>
+<% if ! @proxy %>#<% end %>proxy=<%= @proxy %>
 
 #
 # Option : ssl
@@ -64,7 +64,7 @@ logfile=<%= logfile %>
 #          the SSL certificates settings below.
 # Default: false
 #
-<% if ! @ssl %>#<% end %>ssl=<%= ssl %>
+<% if ! @ssl %>#<% end %>ssl=<%= @ssl %>
 
 #
 # Option : ssl_ca_bundle
@@ -77,7 +77,7 @@ logfile=<%= logfile %>
 #          /etc/pki/tls/certs/ca-bundle.crt
 # Note   : Can also be set with the -b command line option.
 #
-<% if ! @ssl_ca_bundle %>#<% end %>ssl_ca_bundle=<%= ssl_ca_bundle %>
+<% if ! @ssl_ca_bundle %>#<% end %>ssl_ca_bundle=<%= @ssl_ca_bundle %>
 
 #
 # Option : ssl_ca_path
@@ -87,7 +87,7 @@ logfile=<%= logfile %>
 # Default: /etc/ssl/certs
 # Note   : Can also be set with the -S command line option.
 #
-<% if ! @ssl_ca_path %>#<% end %>ssl_ca_path=<%= ssl_ca_path %>
+<% if ! @ssl_ca_path %>#<% end %>ssl_ca_path=<%= @ssl_ca_path %>
 
 #
 # Option : pidfile
@@ -98,7 +98,7 @@ logfile=<%= logfile %>
 # Default: /tmp/nrsysmond.pid
 # Note   : Can also be set with the -p command line option.
 #
-<% if ! @pidfile %>#<% end %>pidfile=<%= pidfile %>
+<% if ! @pidfile %>#<% end %>pidfile=<%= @pidfile %>
 
 #
 # Option : collector_host
@@ -109,7 +109,7 @@ logfile=<%= logfile %>
 #          if SSL is enabled. If the port is omitted the default value is used.
 # Default: collector.newrelic.com
 #
-<% if ! @collector_host %>#<% end %>collector_host=<%= collector_host %>
+<% if ! @collector_host %>#<% end %>collector_host=<%= @collector_host %>
 
 #
 # Option : timeout
@@ -123,4 +123,4 @@ logfile=<%= logfile %>
 #          once the original connection has been made. The value is in seconds.
 # Default: 30
 #
-<% if ! @timeout_value %>#<% end %>timeout=<%= timeout_value %>
+<% if ! @timeout_value %>#<% end %>timeout=<%= @timeout_value %>
