@@ -24,9 +24,11 @@ class newrelic::params {
   $daemon_special        = '0'
   $daemon_proxy          = ''
 
-  # Fail if the OS is not Ubuntu/Debian
-  case $::operatingsystem {
-    ubuntu, debian: {
+  # Fail if the OS is not Debian or RHEL derived
+  case $::osfamily {
+    debian: {
+    }
+    redhat: {
     }
     default: {
       fail("Unsupported platform: ${::operatingsystem}")
